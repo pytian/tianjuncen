@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>信息检索生成对抗网络</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                信息检索生成对抗网络
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                信息检索生成对抗网络是GAN在信息检索领域的一个变种。 GAN 的启发下，提出了 IRGAN 框架，通过极小化极大算法中的对抗性训练统一了生成式和判别式 IR 模型这两种信息检索方法学派。研究者在四个现实世界数据集上，对三个典型的 IR 任务（即网络搜索、项目推荐和问答）进行了广泛实验，在每组实验中都观察到了显著的性能提升。
+
+GAN模型中，判别模型和生成模型至关重要：
+
+生成模型作用：从给定的查询候选池中选择最接近已观测样本分布的未观测样本。这里要特别说明一下，其实在GAN的原理里面，生成样本是通过学习已知样本的分布，去真正生成一个样本。而在LTR-GAN任务中，则通过对学习选择那些最优的未观测样本来作为生成样本，也就是说，这个生成的样本本身已经存在，只是之前没有标签而已。这是由排序任务特定场景造成的。
+
+判别模型作用：对于给定的样本集合，尽量准确的区分已观测样本与未观测样本。所以优化的目标就是最大化已观测样本和生成样本之间的差距。当然这些未观测样本中可能有正样本，可能有负样本
+
+首先预训练一个初始的生成器，在提供的代码里面主要是利用log排序判别器学习动态负样本抽样。
+
+有了这个预训练的生成器模型作为初始化模型，进行生成器和判别器的迭代训练。若干轮之后，得到最终的模型。最终判别模型和生成模型都可以拿来作为最终排序模型，具体看不同的任务效果。在IR检索任务背景下，判别模型的效果要好一些。
+
+论文提出的IRGAN解决方案的总体逻辑总结在算法1 中。在对抗训练之前，生成器和判别器可以通过其常规模型初始化。之后，在对抗训练阶段，生成器和判别器在等式（5）和（3）中以另外的方式训练。
+
+判别器和生成器是如何相互帮助的？对于positive的文档，无论是否被观察到了，它们由判别器 fφ（q，d） 和条件概率密度 pθ（d| q，r） 给出的相关性分数可能在一定程度上正相关。在每个训练阶段，生成器试图产生接近判别器决策边界的样本，以对下一轮训练造成迷惑，而判别器则努力对生成的样本进行判别。由于在 positive 但 unobserved（即 true-positive）的样本和（部分）观察到的 positive 样本之间存在正相关，和其他带有来自判别器信号的样本相比，生成器应该能够学习更快地上推这些positive 但不可观察的样本。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

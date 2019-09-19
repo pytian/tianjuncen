@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>谷歌的自然问答数据集在哪下载？怎么构建？怎么做的数据标注？数据集规模有多大？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                谷歌的自然问答数据集在哪下载？怎么构建？怎么做的数据标注？数据集规模有多大？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <h1 id="toc_0">2019-01-27 06:59:40 上午</h1>
+
+<p>谷歌提出自然问答数据集 Natural Questions（NQ）</p>
+
+<p>开放性的问答任务一直是衡量自然语言理解的好标准，QA 系统一般能阅读网页并返回正确的答案。然而目前并没有比较大的自然问答数据集，因为高质量的自然问答数据集需要大量实际问题以及寻找正确答案的人力成本。为了解决这一问题，谷歌近日开放了一个大规模数据集 Natural Questions（NQ），它可以用来训练并评估开放性问答系统，并且再现了人类寻找问题答案的端到端过程。</p>
+
+<p>NQ 数据集非常大，包含 30 万条自然发生的问题，以及对应的回答标注，其中每一条回答都是由人工从维基百科页面找到的。此外，这个自然问答数据集还包括 1.6 万个特殊样本，其中每一个样本的答案都由 5 个不同的标注者标注，因此这种多样性的回答更适合评估 QA 系统的效果。</p>
+
+<p>因为回答 NQ 中的自然性问题比回答「小问题」有更高的要求，模型需要对提问有更深的理解，因此这样的模型会更复杂，也会更贴近真实问答场景。所以谷歌在发布这个数据集的同时，还提出了一项挑战赛，它希望挑战赛能激励研究者基于这个数据集做出更好的问答系统——更能理解自然语言的问答系统。</p>
+
+<p>NQ 数据集的论文中展示了标注的过程与结果。简而言之，谷歌的标注过程可以分为以下几个步骤：向标注者呈现问题和维基百科页面；标注者返回一个长回答与短回答。其中长回答（I）可以为维基百科页面上的 HTML 边界框，一般可以是一段话或一张表，它包含回答这些问题的答案。当然，如果没有合适的答案或者答案太分散，标注者也可以返回 I=NULL。短回答（s）可以是 I 中的一个或一组实体，它们可回答问题。如下展示了数据集的样本示例：<br/>
+<img src="!%5B%5D(media/15485436339275.jpg)%EF%BF%BC" alt=""/></p>
+
+<p>图 1：数据集中的样本标注。</p>
+
+<p>论文：Natural Questions: a Benchmark for Question Answering Research</p>
+
+<p>论文地址：<a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/b8c26e4347adc3453c15d96a09e6f7f102293f71.pdf">https://storage.googleapis.com/pub-tools-public-publication-data/pdf/b8c26e4347adc3453c15d96a09e6f7f102293f71.pdf</a></p>
+
+<p>摘要：我们提出了 Natural Questions（NQ）语料库，它是一种新型问答数据集。问题都是提交到谷歌搜索引擎的匿名搜索请求。标注者会收到一条问题以及对应的维基百科页面，该维基百科页面通过问题的谷歌搜索结果（Top 5）确定。标注者会标注一个长回答（通常是段落）和一个短回答，其中如果页面有明确答案，短回答是单个或多个实体，如果没有答案，短回答和长回答标注为 NULL。</p>
+
+<p>目前数据集包含 307373 对训练样本，它们有单个标注；7830 对开发或验证样本，它们有 5 种标注；还有 7842 对测试样本，它们也有 5 种标注。我们还提出了验证数据质量的实验，并分析了 302 个样本的 25 种标注，从而充分了解标注任务中的人工差异。为了评估问答系统，我们提出了鲁棒性的度量方法，并表示这些指标有非常高的人类上边界；我们同样使用相关文献中的竞争性方法建立了基线结果。</p>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>什么是生成式自动文本摘要？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                什么是生成式自动文本摘要？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>生成式文本摘要以一种更接近于人的方式生成摘要，这就要求生成式模型有更强的表征、理解、生成文本的能力。传统方法很难实现这些能力，而近几年来快速发展的深度神经网络因其强大的表征（representation）能力，提供了更多的可能性，在图像分类、机器翻译等领域不断推进机器智能的极限。
+
+借助深度神经网络，生成式自动文本摘要也有了令人瞩目的发展，不少生成式神经网络模型（neural-network-based abstractive summarization model）在DUC-2004测试集上已经超越了最好的抽取式模型[4]。这部分文章主要介绍生成式神经网络模型的基本结构及最新成果。基本模型结构生成式神经网络模型的基本结构主要由编码器（encoder）和解码器（decoder）组成，编码和解码都由神经网络实现。编码器负责将输入的原文本编码成一个向量（context），该向量是原文本的一个表征，包含了文本背景。而解码器负责从这个向量提取重要信息、加工剪辑，生成文本摘要。这套架构被称作Sequence-to-Sequence（以下简称Seq2Seq），被广泛应用于存在输入序列和输出序列的场景，比如机器翻译（一种语言序列到另一种语言序列）、image captioning（图片像素序列到语言序列）、对话机器人（如问题到回答）等。
+
+Seq2Seq架构中的编码器和解码器通常由递归神经网络（RNN）或卷积神经网络（CNN）实现。基于递归神经网络的模型RNN被称为递归神经网络，是因为它的输出不仅依赖于输入，还依赖上一时刻输出。如上图所示，t时刻的输出h不仅依赖t时刻的输入x，还依赖t-1时刻的输出，而t-1的输出又依赖t-1的输入和t-2输出，如此递归，时序上的依赖使RNN在理论上能在某时刻输出时，考虑到所有过去时刻的输入信息，特别适合时序数据，如文本、语音、金融数据等。因此，基于RNN实现Seq2Seq架构处理文本任务是一个自然的想法。
+
+典型的基于RNN的Seq2Seq架构如下图所示：图中展示的是一个用于自动回复邮件的模型，它的编码器和解码器分别由四层RNN的变种LSTM[5]组成。图中的向量thought vector编码了输入文本信息（Are you free tomorrow?），解码器获得这个向量依次解码生成目标文本（Yes, what's up?）。上述模型也可以自然地用于自动文本摘要任务，这时的输入为原文本（如新闻），输出为摘要（如新闻标题）。目前最好的基于RNN的Seq2Seq生成式文本摘要模型之一来自Salesforce，在基本的模型架构上，使用了注意力机制（attention mechanism）和强化学习（reinforcement learning）</blockquote>
+来源： <em><a href="https://blog.csdn.net/Mbx8X9u/article/details/80491214">干货｜当深度学习遇见自动文本摘要，seq2seq+attention - 机器学习算法与Python学习 - CSDN博客</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

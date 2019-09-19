@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>迁移学习中有哪些技术挑战？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                迁移学习中有哪些技术挑战？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>迁移学习中的五个挑战：
+
+Instance Re-weighting Adaptation。由于跨域数据间的概率分布差异，通过基于源和目标数据之间的特征分布匹配，以非参方式直接推断实例的重采样权重来自然考虑差异，参数分布假设下的权重参数估计仍然是一大挑战。
+
+特征适应。为了适应多源数据，需要学习一个通用的特征空间或者表示，其中投影的源和目标域具有相似的分布，数据分布的异质性使得获得这样的通用特征表示相当的具有挑战性。
+
+分类器适应。由于目标域的移位问题，对源域样本进行训练的分类器通常都是有偏差的。从多个域中学习可以用于其他不同域的通用分类器是一个非常具有挑战性的主题。
+
+深度网络适应。目前已经认识到深度神经网络具有非常强大的特征表示能力，并且可以在单一域中构建通用的深度模型。域的大尺度变动使得深度神经网络难以构建出可迁移的深度表示。
+
+对抗式适应。对抗性学习起源于生成式对抗网络，TL/DA目标是使得源域和目标域在特征空间内更加的接近。通常来说，两个域一定会发生混淆，难以区分。因此，使用对抗性训练和游戏策略的域混淆问题中，存在着不小的技术挑战。</blockquote>
+来源： <em><a href="https://mp.weixin.qq.com/s?__biz=MzU2OTA0NzE2NA==&amp;mid=2247508723&amp;idx=2&amp;sn=0a21faebb6f88ef6b6234d9bbc9b7e23&amp;chksm=fc8643e0cbf1caf60566606ba9fadb60deeb349dd755e53b7a6e5d4a6a9256276275b39c0b26&amp;mpshare=1&amp;scene=1&amp;srcid=#rd">专知</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

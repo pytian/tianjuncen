@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>怎么自动化评估生成式摘要的质量？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                怎么自动化评估生成式摘要的质量？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>为了更高效地评估自动文本摘要，可以选定一个或若干指标（metrics），基于这些指标比较生成的摘要和参考摘要（人工撰写，被认为是正确的摘要）进行自动评价。目前最常用、也最受到认可的指标是ROUGE（Recall-Oriented Understudy for Gisting Evaluation）。
+
+ROUGE是Lin提出的一个指标集合，包括一些衍生的指标，最常用的有ROUGE-n，ROUGE-L，ROUGE-SU：
+
+ROUGE-n：该指标旨在通过比较生成的摘要和参考摘要的n-grams（连续的n个词）评价摘要的质量。常用的有ROUGE-1，ROUGE-2，ROUGE-3。
+
+ROUGE-L：不同于ROUGE-n，该指标基于最长公共子序列（LCS）评价摘要。如果生成的摘要和参考摘要的LCS越长，那么认为生成的摘要质量越高。该指标的不足之处在于，它要求n-grams一定是连续的。
+
+ROUGE-SU：该指标综合考虑uni-grams（n = 1）和bi-grams（n = 2），允许bi-grams的第一个字和第二个字之间插入其他词，因此比ROUGE-L更灵活。
+
+作为自动评价指标，ROUGE和人工评定的相关度较高，在自动评价摘要中能给出有效的参考。但另一方面，从以上对ROUGE指标的描述可以看出，ROUGE基于字的对应而非语义的对应，生成的摘要在字词上与参考摘要越接近，那么它的ROUGE值将越高。但是，如果字词有区别，即使语义上类似，得到的ROUGE值就会变低。换句话说，如果一篇生成的摘要恰好是在参考摘要的基础上进行同义词替换，改写成字词完全不同的摘要，虽然这仍是一篇质量较高的摘要，但ROUGE值会呈现相反的结论。从这个极端但可能发生的例子可以看出，自动评价方法所需的指标仍然存在一些不足。
+
+目前，为了避免上述情况的发生，在evaluation时，通常会使用几篇摘要作为参考和基准，这有效地增加了ROUGE的可信度，也考虑到了摘要的不唯一性。对自动评价摘要方法的研究和探索也是目前自动文本摘要领域一个热门的研究方向。</blockquote>
+来源： <em><a href="https://blog.csdn.net/Mbx8X9u/article/details/80491214">干货｜当深度学习遇见自动文本摘要，seq2seq+attention - 机器学习算法与Python学习 - CSDN博客</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>python framework中，Tornado与Flask、Django相比有什么优缺点</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                python framework中，Tornado与Flask、Django相比有什么优缺点
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Tornado异步：原生Tornado框架提供异步网络库IOLoop和IOStream以及异步协程库tornado.gen(必须使用Tornado的web框架和HTTP服务器，否则异步接口可能无法使用)，方便用户通过更直接的方法实现异步编程，而不是回调的方式，官方推荐yield协程方式完成异步。
+
+利用高效的epoll技术处理请求，单线程/单进程同时处理大量连接。
+
+没用使用传统的wsgi协议，而是利用Tornado自己的web框架和http服务形成了一整套WSGI方案进行处理。
+
+应用场景上，对要性能支持比较强。要性能，Tornado 首选；Tornado适合高度定制，适合访问量大，异步情况多的网站。
+
+要开发速度，Django 和Flask 都行，区别是Flask 把许多功能交给第三方库去完成了，因此Flask 更为灵活。Django适合初学者或者小团队的快速开发，适合做管理类、博客类网站、或者功能十分复杂需求十分多的网站，
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

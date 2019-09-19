@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>人机识别技术架构设计和业务逻辑</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                人机识别技术架构设计和业务逻辑
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                技术方案架构图如下：<img src="http://img.yuedusikao.com/1552038808620HWTmR2vnND.jpg" style="width:100%">下面会按步骤来讲解技术方案的处理流程：Step 0 基础风控拦截基础风控拦截是上面提到的频次、名单等的拦截限制，在 Nginx 层就能直接实施拦截。如果发现是恶意请求，直接将请求过滤返回 403，这是初步的拦截，用户在请求 Web 页面的时候就开始起作用了。Step 1 风控服务端生成 Token 后传给前端Step 0 可能还没进入到活动 Web 页面，进入活动 Web 页面后才真正开始人机识别验证的流程，前端会先开始获取 Token。Step  2 前端生成敏感数据敏感数据应包含用户交互行为数据、设备环境数据、活动业务逻辑数据以及无效数据。Step 3 使用 HTTPS 的签名接口发送数据Token 可以作为 Authorization 的值添加到 Header 中，数据接口的签名可以有效防止 CSRF 的攻击。Step 4 数据接口的校验风控服务端收到请求后，会先验证数据接口签名中的 Token 是否有效。验证完 Token，才会对敏感数据进行解密。数据解密成功，再进一步对人机识别的数据合法性进行校验。Step 5 业务逻辑的处理前面的步骤为了做人机识别验证，这些验证不涉及到业务逻辑。在所有这些验证都通过后，后端业务服务才会开始处理实际的活动业务逻辑。处理完活动业务逻辑，最终才会返回用户参与活动的结果。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

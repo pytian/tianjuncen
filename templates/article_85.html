@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>本体、知识库、知识图谱、知识图谱识别之间是什么关系？ </title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                本体、知识库、知识图谱、知识图谱识别之间是什么关系？ 
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                最近在研究知识图谱，有些理解，分享一下：
+
+1、本体Ontology是概念的集合，是大家都公认的概念框架，一般不会改变，比如“人”、“事”、“地”、“物”、“组织”，在面对对象编程里面，我们把它叫做类，在数据管理里面我们把它叫做元数据；是描述对象－－实例的抽象概括。
+
+2、实体是本体、实例及关系的整合，比如“人”是本体框中的一个概念，概念中也规定了相关属性比如“性别”，小明是一个具体的人，叫做实例，所以小明也有性别，小明以及体现小明的本体概念“人”以及相关属性，叫做一个实体（简单的说就是：本体+实例）；实体是有明确概念和意义指向。
+
+3、很多实体形成的数据库叫做知识库，如dbpedia等；
+
+4、知识图谱是一种图谱组织形式，通过语义关联把各种实体关联起来，之前不叫做知识图谱，而叫做语义网。知识图谱把结构化、非结构化的数据通过数据抽取、融合在一起，体现了数据治理、语义连接的思想，有利于大规模数据的利用和迁移。
+
+来源： <i>知乎</i>
+
+&nbsp;
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

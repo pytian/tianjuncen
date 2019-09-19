@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>Schema.org是什么？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Schema.org是什么？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>用Schema.org描述数据集随着开放信息、开放政府、开放科学的发展，互联网上各类数据集越来越多。Schema.org的“数据集”就是专用于对这类数据集进行结构化描述的元数据方案。它描述的是数据集的基本信息，而不是数据集当中的数据，其目的是改进对数据集的搜索。
+
+在Google开发者网站的文档中，有Science Datasets [3] ，介绍“数据集”相关属性及其使用。属性可分为7个部分，其中不少并非Dataset所特有：
+
+1、基本数据集属性：
+
+必备属性 （括号中为取值类型）
+
+name 名称（文本）
+
+description 描述（文本）简单概要
+
+url 网址（URL）描述该数据集页面的网址
+
+sameAs 等同网址（URL）可用于访问该数据集页面的其他网址version 版本（文本、数字）
+
+keywords 关键词（文本）
+
+variableMeasured 测度变量（文本、属性值）
+
+creator.name 创建者名称（Person, Organization）
+
+个人、组织其中“测度变量”指数据集测度什么，比如温度、压力。本属性尚未确定，正征求反馈意见。
+
+2、数据目录属性includedInDataCatalog 包含在数据目录（DataCatalog）数据集所属存储库
+
+3、下载信息属性distribution 发行（DataDownload）描述数据集下载位置、文件格式distribution.fileFormat 文件格式（文本）distribution.contentURL 内容网址（URL）下载链接
+
+4、时间范围temporalCoverage（ISO 8601）数据集中的数据覆盖的特定时间间隔，可以是单一数据或时间段。
+
+5、空间范围spatialCoverage数据集中的数据覆盖的空间方位。可以是单一点(GeoCoordinates)或区域(GeoShape)的坐标，也可以是命名位置（地理名称）。
+
+6、引文和出版物citation（文本、创作作品）引用描述该数据集的出版物（被引）
+
+7、出处和许可信息license 许可（URL、文本）数据集发布许可的URL文档最后对“出处”使用 sameAs 还是 isBasedOn 作了说明。文档中还有一个完整样例，是用上述属性描述美国政府开放数据 NCDC Storm Events Database。在原数据介绍页面下部，有描述元数据，但未做结构化标识。
+
+——— Dataset新增类及属性 ———
+
+根据开发网页即W3C的WebSchemas/Datasets [4]，本扩展目前含3个新类型及相应属性（未包括前述：variableMeasured 测度变量）
+
+– Thing &gt; CreativeWork &gt; Dataset 数据集– catalog(DataCatalog) 目录（数据目录：容纳数据集的数据目录）– distribution(DataDownload) 发布（数据下载：该数据集的可下载形式，在特定位置、以特定格式）– spatial(Place) 空间（地点：数据集的空间适用范围）– temporal(DateTime) 时间（日期时间：数据集的时间适用范围）– Thing &gt; CreativeWork &gt; DataCatalog 数据目录（数据集的集合）– dataset(Dataset) 数据集（包含在目录中的数据集）– Thing &gt; CreativeWork &gt; MediaObject &gt; DataDownload 数据下载（可下载形式的数据集）</blockquote>
+来源： <em><a href="http://catwizard.net/posts/20170204201929.html">用Schema.org描述数据集 – 编目精灵III</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

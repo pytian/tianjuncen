@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>Contextual Embedding是什么？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Contextual Embedding是什么？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Contextual Embedding：该方向包括一系列工作，如最佳论文Elmo(Embeddings from Language Models)，OpenAI的GPT(Generative Pre-Training)，以及谷歌大力出奇迹的BERT(Bidirectional Encoder Representations from Transformers)。解决的核心问题，是如何利用大量的没标注的文本数据学到一个预训练的模型，并通过通过这个模型辅助在不同的有标注任务上更好地完成目标。传统NLP任务深度模型，往往并不能通过持续增加深度来获取效果的提升，但是在表示层面增加深度，却往往可以对句子做更好的表征，它的核心思想是利用Embedding来表征上下文的的信息。但是这个想法可以通过很多种方式来实现，比如ELMo，通过双向的LSTM拼接后，可以同时得到含上下文信息的Embedding。而Transformer则在Encoder和Decoder两端，都将Attention机制都应用到了极致，通过序列间全位置的直连，可以高效叠加多层（12层），来完成句子的表征。这类方法可以将不同的终端任务做一个统一的表示，大大简化了建模抽象的复杂度。我们的表示也经历了从RNN到拥抱Attention的过程。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

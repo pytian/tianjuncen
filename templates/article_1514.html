@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>变分自编码器</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                变分自编码器
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                变分自编码器可用于对先验数据分布进行建模。从名字上就可以看出，它包括两部分：编码器和解码器。编码器将数据分布的高级特征映射到数据的低级表征，低级表征叫作本征向量（latent vector）。解码器吸收数据的低级表征，然后输出同样数据的高级表征。变分编码器是自动编码器的升级版本，其结构跟自动编码器是类似的，也由编码器和解码器构成。在自动编码器中，需要输入一张图片，然后将一张图片编码之后得到一个隐含向量，这比原始方法的随机取一个随机噪声更好，因为这包含着原图片的信息，然后隐含向量解码得到与原图片对应的照片。但是这样其实并不能任意生成图片，因为没有办法自己去构造隐藏向量，所以它需要通过一张图片输入编码才知道得到的隐含向量是什么，这时就可以通过变分自动编码器来解决这个问题。解决办法就是在编码过程给它增加一些限制，迫使其生成的隐含向量能够粗略的遵循一个标准正态分布，这就是其与一般的自动编码器最大的不同。这样生成一张新图片就比较容易，只需要给它一个标准正态分布的随机隐含向量，这样通过解码器就能够生成想要的图片，而不需要给它一张原始图片先编码。
+        
+        
+        来源：<a href="https://www.jiqizhixin.com/" target="_blank" rel="noopener noreferrer">变分自编码器</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

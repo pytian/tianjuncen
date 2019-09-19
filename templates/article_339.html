@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>Transformer-﻿XL解决了什么问题</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Transformer-﻿XL解决了什么问题
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <!-- wp:paragraph -->
+<p><strong>Transformer-XL</strong>，它使自然语言的理解超出了固定长度的上下文。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>在训练期间，为前一个segment计算的representation被修复并缓存，以便在模型处理下一个新的segment时作为扩展上下文重新利用。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>这个额外的连接<strong>将最大可能依赖关系长度增加了N倍</strong>，其中N表示网络的深度，因为上下文信息现在可以跨片段边界流动。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>此外，这种递归机制还<strong>解决了上下文碎片问题</strong>，为新段前面的token提供了必要的上下文。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>在训练期间具有segment-level recurrence的Transformer-XL相对位置编码<br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>然而，天真地应用 segment-level recurrence是行不通的，因为当我们重用前面的段时，位置编码是不一致的。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>例如，考虑一个具有上下文位置[0,1,2,3]的旧段。当处理一个新的段时，我们将两个段合并，得到位置[0,1,2,3,0,1,2,3]，其中每个位置id的语义在整个序列中是不连贯的。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>为此，我们提出了一种新的<strong>相对位置编码方案</strong>，使递归机制成为可能。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>此外，与其他相对位置编码方案不同，我们的公式使用具有learnable transformations的固定嵌入，而不是earnable embeddings，因此在测试时更适用于较长的序列。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>当这两种方法结合使用时，在评估时， Transformer-XL比vanilla Transformer模型具有<strong>更长的有效上下文</strong>。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>在计算时具有固定长度上下文的vanilla Transformer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>在评估期间具有segment-level 递归的Transformer-XL&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>此外，Transformer-XL能够在不需要重新计算的情况下处理新段中的所有元素，从而显著提高了速度(将在下面讨论)。结果<br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Transformer-XL在各种主要的语言建模(LM)基准测试中获得新的最优(SoTA)结果，包括长序列和短序列上的字符级和单词级任务。实验证明， Transformer-XL 有三个优势：</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Transformer-XL学习的依赖关系<strong>比RNN长约80%</strong>，<strong>比vanilla Transformers模型长450%</strong>，尽管后者在性能上比RNN好，但由于固定长度上下文的限制，对于建模长期依赖关系并不是最好的。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>由于不需要重复计算，Transformer-XL在语言建模任务的评估期间<strong>比vanilla Transformer快1800+倍</strong>。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>由于建模长期依赖关系的能力，Transformer-XL在长序列上具有更好的困惑度(Perplexity, 预测样本方面更准确)，并且通过解决上下文碎片化问题，在短序列上也具有更好的性能。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Transformer-XL在5个数据集上的结果</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Transformer-XL在5个数据集上都获得了强大的结果：在enwiki8上将bpc/perplexity的最新
+ 
+state-of-the-art(SoTA)结果从1.06提高到0.99，在text8上从1.13提高到1.08，在WikiText-103上从20.5提高到18.3，在One
+ Billion Word上从23.7提高到21.8，在Penn Treebank上从55.3提高到54.5。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>研究人员展望了Transformer-XL的许多令人兴奋的潜在应用，包括但不限于改进语言模型预训练方法(例如BERT)，生成逼真的、长篇的文章，以及在图像和语音领域的应用。</p>
+<!-- /wp:paragraph -->
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

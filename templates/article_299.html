@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>BERT模型预训练量有多大？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                BERT模型预训练量有多大？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>BERT训练数据采用了英文的开源语料BooksCropus 以及英文维基百科数据，一共有33亿个词。同时BERT模型的标准版本有1亿的参数量，与GPT持平，而BERT的大号版本有3亿多参数量，这应该是目前自然语言处理中最大的预训练模型了。当然，这么大的模型和这么多的数据，训练的代价也是不菲的。谷歌用了16个自己的TPU集群（一共64块TPU）来训练大号版本的BERT，一共花了4天的时间。对于是否可以复现预训练，作者在Reddit上有一个大致的回复，指出OpenAI当时训练GPT用了将近1个月的时间，而如果用同等的硬件条件来训练BERT估计需要1年的时间。不过他们会将已经训练好的模型和代码开源，方便大家训练好的模型上进行后续任务</blockquote>
+来源： <em><a href="https://www.jiqizhixin.com/articles/2018-10-18-20">NLP 新纪元？如何看待轰炸阅读理解顶级测试的BERT模型？ | 机器之心</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

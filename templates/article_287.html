@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>协同过滤算法是什么？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                协同过滤算法是什么？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                CF（协同过滤）简单来形容就是利用兴趣相投的原理进行推荐，协同过滤主要分两类，
+
+一类是基于物品的协同过滤算法，
+
+另一种是基于用户的协同过滤算法，这里主要介绍基于物品的协同过滤算法。
+
+给定一批用户，及一批物品，记Vi表示不同用户对物品的评分向量，那么物品i与物品j的相关性为：
+<img class="alignnone size-medium wp-image-288" src="https://yuedusikao.com/wordpress/wp-content/uploads/2019/01/icf-300x79.jpg" alt="" width="300" height="79" />
+
+上述公式是利用余弦公式计算相关系数，相关系数的计算还有：杰卡德相关系数、皮尔逊相关系数等。
+<img class="alignnone size-medium wp-image-289" src="https://yuedusikao.com/wordpress/wp-content/uploads/2019/01/ibf-300x71.jpg" alt="" width="300" height="71" />
+
+计算用户u对某一物品的偏好，记用户u对物品i的评分为score(u,i)，用户u对物品i的协同过滤得分为rec(u,j)。
+
+来源： <em><a href="https://mp.weixin.qq.com/s/9F_BRgnhAxP-nALtBdIZpg">阿里巴巴机器智能</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

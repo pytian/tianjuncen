@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>哈工大刘挺：大词林的知识图谱是什么状态？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                哈工大刘挺：大词林的知识图谱是什么状态？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>2014年年末，哈工大正式发布《大词林》。现在只需在浏览器中键入www.bigcilin.com，即可访问《大词林》。《大词林》是一种自动从网络中爬取实体及实体的概念以形成基于上下位关系的通用知识图谱。
+
+<img src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/59fffa19cf6d3.jpg" alt="åå·¥å¤§åæºï¼ä»ç¥è¯å¾è°±å°äºçå¾è°± | CNCC 2017" />这意味着，如果用户输入的词语不被《大词林》所包含，《大词林》即会实时地到互联网上去搜索，以自动挖掘该词语的上位概念词，并将这些上位概念词整理为层次结构。比如输入“林肯”，《大词林》就会根据“林肯”在网络中出现的语义信息，自动挖掘出“林肯”所具有的多个概念，例如“汽车”、“总统”、“交通工具”、“领袖”等，然后再根据这些概念的抽象程度，将这些概念刻画为层次结构。例如“领袖”相对于“总统”更加抽象，在图中“领袖”的层次就比“总统”更高。上图左侧为《大词林》层次目录的一部分，其骨架是《同义词词林（扩展版）》。《大词林》选择《同义词词林（扩展版）》作为骨架的原因在于：经过反复的探讨，刘挺教授带领的团队认为词汇应具有两种类型，一种是“实体”与真实的事物相对应，比如具体的人名、地名、机构名；另一种是“概念”，是“实体”的抽象含义，比如“植物”、“水果”等。实体之间具有明显的横向关系，而“实体”和“概念”、“概念”和“概念”之间具有明显的层次关系，因此词汇之间应具有由横向关系和纵向关系所形成的网状结构。
+
+<img src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/5a00071bb4a38.jpg" alt="åå·¥å¤§åæºï¼ä»ç¥è¯å¾è°±å°äºçå¾è°± | CNCC 2017" />基于此，刘挺教授带领的团队将《同义词词林（扩展版）》作为《大词林》层次（纵向）关系构建的骨架。这里简单介绍一下作为《大词林》的骨架-《同义词词林（扩展版）》存在的问题。《同义词词林》的第一个问题是仅具有固定的5层结构，但面对千万级乃至亿万级规模多领域、多样性的词汇，固定的结构显然无法对其进行有效描述；
+
+第二个问题是《同义词词林（扩展版）》包含的词语数目非常有限，且大部分为抽象的概念，其规模不到十万词，显然不适合实际应用。基于此，刘挺教授带领的团队决心打破《同义词词林（扩展版）》的上述限制，从而形成了现在的《大词林》。首先，《大词林》的层数是不固定的，其根据词语的抽象程度自动进行层次化；其次，《大词林》中包含了很多具体的实体（例如人名、地名、机构名），其规模是《同义词词林（扩展版）》的数百倍，并且还在不断的扩充。
+
+<img src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/5a0008ad271dc.jpg" alt="åå·¥å¤§åæºï¼ä»ç¥è¯å¾è°±å°äºçå¾è°± | CNCC 2017" />
+
+《大词林》的特点在于能够从多种信息源中自动地构造词汇和词汇的上下位关系。这是刘挺教授带领的团队中一名博士生发表的一篇ACL会议论文（该会议是自然语言处理领域的顶级会议，被计算机学会评定为Rank A），这篇论文详细地展示了如何自动的从多信息源里获取实体概念词的技术框架。
+
+<img src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/5a000959d97ea.jpg" alt="åå·¥å¤§åæºï¼ä»ç¥è¯å¾è°±å°äºçå¾è°± | CNCC 2017" />
+
+简单来说，获取概念词的来源主要有三个，1）搜索引擎中检索得到的高概率的同现词，2）在线百科的类别标签3）词语的构词法，对于很多词，其后缀即为该词的概念词，例如像微软公司的公司就是微软公司这个实体的概念词。之后，采用排序算法对获取得到的这些候选概念词进行打分，然后截取超过一定阈值的候选概念词保留到《大词林》中。上面的方法仅仅获取了针对某个词语的概念词，如左图所示。但是，概念词之间是有明显的层次关系的，如右图所示，而《大词林》的特殊之处就在于能够自动形成概念词之间的层次结构。基于上述的处理方案，从《同义词词林（扩展版）》的十万词出发，现在的《大词林》已经成为一个具有千万级词汇量级的知识图谱，并且其规模每天都在不断的增长。由于《大词林》是自动构建的，因此需要对其质量做一个评估，以判别《大词林》中是不是包含了很多的错误，到底可不可以实用。刘挺教授带领的团队对《大词林》做过抽样评估。结果显示，针对某个词语，找到其概念词的准确率为85%，词语之间的上下位关系识别的准确率为90%。相比于其他知识图谱，《大词林》主要专注于语言学中词汇的上下位关系的自动构建，是一种语言的知识图谱。当然，目前刘挺教授带领的团队也着手在《大词林》中引入横向关系，相信不久的将来就能看见更加全面的《大词林》。
+
+<img src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/5a000af620528.jpg" alt="åå·¥å¤§åæºï¼ä»ç¥è¯å¾è°±å°äºçå¾è°± | CNCC 2017" /></blockquote>
+来源： <em><a href="https://www.leiphone.com/news/201711/Fx6Mgs9WRPBshnIG.html">哈工大刘挺：从知识图谱到事理图谱 | CNCC 2017 | 雷锋网</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

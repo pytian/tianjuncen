@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>Quicksilver机器生成的知识库是怎么工作的？</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Quicksilver机器生成的知识库是怎么工作的？
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <blockquote>像维基百科这样的人为知识库存在召回问题。首先，有些文章应该存在，但完全缺失。未知的未知数。
+
+考虑一下加拿大机器人专家Joelle Pineau将科学严谨性引入人工智能，并指导 Facebook在蒙特利尔的新AI研究实验室。或者Miriam Adelson，一位积极出版的成瘾治疗研究员，他恰好是婚姻上的亿万富翁，也是她自己领域的主要资助者。或者伊芙琳王，麻省理工学院备受尊敬的MechE部门的新负责人，其成就包括一种可以从阳光和沙漠空气中产生可饮用水的设备。
+
+几天前我写这篇文章的时候，他们都没有关于英语维基百科的文章，尽管他们应该通过任何措施来表达。（Pineau现在感谢我的朋友和科学家们的同事Jess Wade在我告诉她关于Pineau缺席的几个小时后创建了一篇文章。如果互联网心情愉快，有人会在此之后不久为其他两个人创建文章帖子上线了。）但我没有自己发现那些人。我使用了我们在Primer建立的机器学习系统。它为我发现并描述了它们。如果一个人可以阅读5亿篇新闻文章，3900万篇科学论文，所有维基百科，然后写出70,000份科学家的传记摘要，它就像人类一样。<a href="https://primer.ai/blog/quicksilver"><img class="alignnone size-full" src="//images.ctfassets.net/ek6qkphcgu1d/3vExJ3IpCU4wsQKAKIkKkG/4a0e01835c5fac456f8af8c98c200812/JoellePinau.png" alt="" /></a>
+
+我们称之为Quicksilver。这是对Neal Stephenson的巴洛克式循环的一种认可，其中一种技术被想象成“在一个巨大的百科全书中捕获所有人类知识，这将成为一种机器，不仅用于寻找旧知识，而且用于制造新知识。
+
+”因为我们是书呆子。我们公开发布了有关科学家的免费许可数据，这些数据是我们一直在生产的，从30,000名计算机科学家开始。维基百科只知道其中的15％。该数据集包括100万个引用或描述科学家的新闻句子，源文章的元数据，他们在语义学者开放研究语料库中发表的作品的映射，以及与他们的维基百科和维基数据条目的映射。我们将继续修改和添加该数据。（非常感谢Oren Etzioni和AI2的数据和反馈。）我们的目标是帮助开放数据研究社区从科学内容开始构建更好的维护维基百科和维基数据的工具。
+
+流体知识
+
+我们在30,000篇关于科学家，维基数据条目的英文维基百科文章以及描述他们及其工作的新闻文件中的300多万条句子中训练了Quicksilver的模型。然后我们提供了200,000份科学论文作者的姓名和附属机构。早上我们发现维基百科中有40,000人失踪，他们的新闻报道与那些有文章的人分布相似。Quicksilver在一夜之间将可能有资格获得维基百科文章的科学家数量翻了一番。它还揭示了困扰人类知识库的召回问题的第二种情况：信息衰退。对于那些在英语维基百科上的30,000名科学家中的大多数，Quicksilver确定了他们的文章中缺少的相关信息。为一个人创建一篇文章只是一个开始。它必须永远保持，随着世界的变化而更新。众所周知，维基百科的绝大多数信息都是正确的，并且被引用得很好，即使经过十多年的特技和研究证明不是这样。但正如Fetahu等人。
+
+去年，维基百科显着落后于有关人和事件的新闻。以华盛顿大学校长Ana Mari Cauce为例。她的维基百科文章去年陈旧。Quicksilver发现了有关Cauce 捍卫DACA学生的最新信息，以及她在美国校园的言论自由与仇恨言论之争中的持续作用。Aleksandr Kogan的Quicksilver输出也很有启发性。心理学家的英文维基百科文章创建于2018年3月，当时剑桥分析公司的丑闻在他周围爆炸。但这条路线在4月26日变得冷淡，这是他的文章最近的参考日期。四天之后，Quicksilver为Kogan确定了一个事件，这也是他在Twitter数据上得到的一个启示。Twitter现在正在打击数据访问。总结一个人自动生成维基百科风格的文章正处于自然语言处理当前可能的边缘。
+
+它通常被构造为多文档摘要任务：给定一组包含有关实体的信息的参考文档，生成实体的摘要。Biadsy等人十年前最早尝试生成维基百科风格的传记之一。在哥伦比亚使用的提取总结。该算法对源文本中的相关句子进行排序和剪切，并将它们一起缝制成最终的Franken文本。优点是句子都是连贯的，因为它们是由人类编写的。但它伴随着表现力的权衡。机器只能写出人类已经写过的内容。最近，研究人员正在转向抽象概括。该技术使用神经语言模型来动态生成文本。它在连贯性方面有一个权衡，产出往往转向无意义的。See等人的巧妙妥协。斯坦福大学通过指针生成器网络为抽象模型提供了一个提取回退选项。（请参阅我们关于此技术的一些承诺和挑战的博客文章。）由指针生成器论文的合着者之一，Google AI的Peter Liu领导的团队最近对自动维基百科的文章进行了一次破解。他们使用提取式摘要作为约束输入文本的第一步，然后对最终输出步骤进行抽象。当它起作用时 - 它们在附录中包含令人印象深刻的样本输出 - 该技术非常具有表现力，能够产生从未存在的多个连贯段落。对于Quicksilver的架构，我们开始在Google AI团队开辟的道路上，但我们的目标更加实用。我们正在建立一个可用于构建和维护维基百科等知识库的系统，而不是使用维基百科作为摘要算法的学术测试平台。我们需要跟踪数据来源，以便最终文本输出中的任何语句都可以引用其来源。我们还需要关于实体及其关系的结构数据，以便我们跟踪事实的变化，而不仅仅是文本。为了实现高精度，没有足够的传记和足够的清洁源文档映射来训练今天的seq2seq模型。他们无法学习所需的隐性知识。我们需要的是一个与seq2seq模型相结合的知识库。幸运的是，世界上最全面的公共百科全书与世界上最全面的公共知识库紧密结合：维基数据。
+
+<img class="alignnone size-medium wp-image-116" src="https://yuedusikao.com/wordpress/wp-content/uploads/2018/12/Quicksilver_6-285x300.png" alt="" width="285" height="300" />
+
+对我们来说，关键的突破是使用维基数据的结构数据来了解我们的科学家种子数量，以便将它们映射到新闻文档中的提及。然后，远程监督允许我们为关系提取引导模型并构建自我更新的知识库。通过添加受维基百科文章训练的RNN，它成为一个可以用自然语言描述自己的知识库。几个月来，我们一直在悄悄地测试和改进Quicksilver。甚至在我们完成文本生成组件之前，Quicksilver就被用于三个英语维基百科的editathons中，以提高科学女性的覆盖率。（感谢500名女科学家们的合作和鼓舞我们！）我们将在以后的帖子中详细描述我们的架构，但这里是Quicksilver如何工作的压缩摘要：作为一项实验，我们正在发布一份由维基百科遗漏的100个简短的Quicksilver生成的科学家摘要样本。
+
+我们很好奇在有人创作文章之前需要多长时间。知识的未来很难理解维基百科对世界的重要性以及多么脆弱。它是访问量排名第五的网站，每月提供超过150亿的综合浏览量。它包括近5000种文章，用近300种语言编写 - 只有13％用英文写成
+
+令人难以置信的是，所有这一切都是由人类志愿者创造的。维基百科的人类作者是它的力量。编辑的审议过程确保维基百科保持健全并趋向于达成共识。只需访问Twitter，就可以看到一个非审议信息平台看起来像机器人漫游的地方。但是用人手来限制人类。随着它对世界变得越来越重要，维基百科上有偏见和缺失的信息将产生严重影响。最重要的公共信息来源的人类编辑可以通过机器学习来支持。算法已被用于检测故意破坏并识别人口稀少的文章。但机器可以做得更多。他们可以跟踪和总结维基百科文章中缺少的信息。他们甚至可以识别完全丢失的文章，并生成初稿。为了解决人类知识库的召回问题，我们需要超越人类。</blockquote>
+来源： <em><a href="https://primer.ai/blog/quicksilver">Primer | 机器生成的知识库</a></em>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

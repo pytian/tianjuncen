@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+    <title>微软在Azure的视频索引器是什么原理</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            margin: 20px;
+        }
+
+        .row {
+            border: rgba(0,0,0,0.3) 1px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                微软在Azure的视频索引器是什么原理
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <span style="color:rgb(51,51,51); font-family:-apple-system-font,BlinkMacSystemFont," helveticaneue","pingfangsc","hiraginosansgb","microsoftyaheiui","microsoftyahei",arial,sans-serif; font-size:15px; font-style:normal; font-variant-ligatures:normal; font-variant-caps:normal; font-weight:400; letter-spacing:1px; orphans:2text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; background-color:rgb(255,255,255); text-decoration-style:initial; text-decoration-color:initial; display:inline!important; float:none; text-align:left;">Azure视频索引器原有的关键字提取模型对转录抄本和通过OCR识别出的重要词汇进行标记。关键字提取模型和主题推断模型之间的主要区别在于，关键字是视频中明确提及的字眼，而主题则是推断出来的——例如，利用知识图谱将检测到的相似概念聚类在一起，以推断更高层级的隐含概念。</span>
+<span style="color:rgb(51,51,51); font-family:-apple-system-font,BlinkMacSystemFont," helveticaneuepingfangschiraginosansgbmicrosoftyaheiuimicrosoftyaheiarialsans-serif="helveticaneuepingfangschiraginosansgbmicrosoftyaheiuimicrosoftyaheiarialsans-serif" _15px="font-size:_15px" normal="white-space:normal" _400="font-weight:_400" _1px="letter-spacing:_1px" _2text-indent0px="orphans:_2text-indent0px" none="float:none" _2="widows:_2" _0px="_-webkit-text-stroke-width:_0px" rgb255255255="background-color:rgb255255255" initial="text-decoration-color:initial" inlineimportant="display:inlineimportant" left="text-align:left">为了让这个过程变得更加高效和低成本，微软在Azure的视频索引器（Video Indexer）中增加了“多模态主题推断”功能。这项新功能可以借助“跨渠道模型”，将视频中的概念映射到三个不同的本体（ontology）类别（IPTC分类、维基百科分类、视频索引器的阶乘主题本体）上，自动推断视频主题，从而直接索引媒体内容。运行过程中，该模型模拟人类观看视频的行为，通过转录抄本（针对口语词汇）、OCR识别内容（针对视觉文本）、以及视频索引器的名人面部识别模型，基于这三类信息，以不同角度捕捉视频中的语义概念。</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>
