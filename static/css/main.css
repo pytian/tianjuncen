@@ -1,0 +1,61 @@
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: MicrosoftYaHei;
+}
+
+li {
+    float: left;
+    margin: 20px;
+}
+
+.title {
+    display: none;
+    font-size: 16px;
+}
+
+.navbar {
+    background: #1F1F1F;
+}
+
+.nav-link, .navbar-brand {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+
+.nav-login {
+    width: 60px;
+    height: 30px;
+    background-color: #099DFF;
+    border-radius: 2px;
+    line-height: 100%;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        margin-top: 135px;
+        border: 1px solid #E7E7E7;
+    }
+}
+
+.input-style {
+    width: 300px;
+    height: 42px;
+    border: 1px #FFFFFF solid;
+    background-color: #1F1F1F;
+}
