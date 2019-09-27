@@ -51,6 +51,17 @@ li {
         margin-top: 135px;
         border: 1px solid #E7E7E7;
     }
+
+    .footerp {
+        margin-top: 20px;
+        color: #3B3B3B;
+        margin-left: 19.5%;
+        font-size: 16px;
+    }
+
+    .ml-ul {
+        margin-left: 16%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -69,6 +80,43 @@ li {
 }
 
 .default-checkt {
-    background-color: #1a1a1a;
-    color: #00F7DE;
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+}
+
+.word-style {
+    color: #3B3B3B;
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1E9FFF;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.label-style {
+    color: #9B9B9B;
+}
+
+
+.footerbackground {
+    background: rgba(231, 231, 231, 1);
+    padding: 20px;
+}
+
+.entity-button-style {
+    height: 30px;
+    border-radius: 15px;
+    border: 1px #E7E7E7 solid;
 }

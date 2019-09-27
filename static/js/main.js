@@ -7,26 +7,20 @@ $(function () {
     var pages = Math.ceil(len / 30);
     pagination(1);
     var html = "<ul class=\"pagination\">\n" +
-        "    <li onclick='pagination(0)'><button>上一页</button></li>    ";
+        "    <li onclick='pagination(0)'><p class='entity-button-style'>prev</p></li>    ";
     for (var i = 1; i <= pages; i++) {
-        html = html + "<li onclick='pagination(" + i + ")'><button>" + i + "</button></li>"
+        html = html + "<li onclick='pagination(" + i + ")'><p class='entity-button-style'>" + i + "</p></li>"
     }
 
 
-    html = html + "<li onclick='pagination(999)'><button>下一页</button></li>\n" +
+    html = html + "<li onclick='pagination(999)'><p class='entity-button-style'>next</p></li>\n" +
         "</ul>";
 
 
     $("#pagination").html(html);
 
-    console.log($('.nav_item2').length);
     //获取li的所有宽度
-    var width = 0;
     var width2 = 0;
-    for (let i = 0; i < $('.nav_item').length; i++) {
-        width += $('.nav_item').eq(i).outerWidth(true);
-    }
-    $('.nav_mine').width(width + 30);  //width只是内容的宽度，需要加上padding的宽度
 
     for (let j = 0; j < $('.nav_item2').length; j++) {
         width2 += $('.nav_item2').eq(j).outerWidth(true);
