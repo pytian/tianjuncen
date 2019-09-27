@@ -122,6 +122,12 @@ a:active {
 }
 
 
+.label-style-checked {
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+}
+
+
 .footerbackground {
     background: rgba(231, 231, 231, 1);
     padding: 20px;
