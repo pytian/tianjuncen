@@ -68,8 +68,21 @@ li {
     .container {
         margin-top: 120pt;
     }
+
+    .navbar-toggler {
+        margin-top: 20px;
+        float: right;
+    }
+
 }
 
+#search-google {
+    float: left;
+    width: 300px;
+    background-color: wheat;
+    height: 42px;
+    margin-top: 20px;
+}
 
 .input-style {
     width: 300px;
@@ -119,4 +132,9 @@ a:active {
     height: 30px;
     border-radius: 15px;
     border: 1px #E7E7E7 solid;
+}
+
+
+.mr-4, .mx-4 {
+    margin-right: 5.5rem !important;
 }
